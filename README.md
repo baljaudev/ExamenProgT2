@@ -3,7 +3,7 @@ Examen final segunda evaluación CFGS DAM
 
 
 
-**Ejercicio 1:**
+## **Ejercicio 1:**
 
 Desarrollar un programa Gestión Tarjeta Puntos para almacenar en un HashMap, tablaPuntos, los puntos acumulados al repostar gasolina.
 El programa deberá:
@@ -63,7 +63,7 @@ Cantidad de tarjetas con 10 o más puntos: 1
 
 
 
-**Ejercicio 3:**
+## **Ejercicio 3:**
 
 Necesitamos realizar un programa para almacenar el conjunto de los socios del Brooklyn Fitboxing. El conjunto estará almacenado en una lista de socios. 
 Para cada socio se deberá conocer un dni, el número de móvil y el email. 
