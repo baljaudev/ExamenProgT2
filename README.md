@@ -2,7 +2,6 @@
 Examen final segunda evaluación CFGS DAM
 
 
-
 ## **Ejercicio 1:**
 
 Desarrollar un programa Gestión Tarjeta Puntos para almacenar en un HashMap, tablaPuntos, los puntos acumulados al repostar gasolina.
@@ -73,7 +72,8 @@ Los socios de pago mensual tendrán el número de cuenta de domiciliación del p
 -	Los socios de bono podrán recargar el bono cuando hayan gastado las sesiones.
 -	Los socios de mensualidad podrán cambiar de plan
 
- 
+ ![image](https://user-images.githubusercontent.com/83509336/159119714-2873f3f3-16f9-4eea-89b5-344899339dcf.png)
+
 
 El programa debe mostrar un menú que permita:
 -	Añadir un socio a la lista: comprobar que el socio no se encuentre ya en el listado por el dni.
