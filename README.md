@@ -63,7 +63,7 @@ Cantidad de tarjetas con 10 o más puntos: 1
 
 
 
-## **Ejercicio 3:**
+## **Ejercicio 2:**
 
 Necesitamos realizar un programa para almacenar el conjunto de los socios del Brooklyn Fitboxing. El conjunto estará almacenado en una lista de socios. 
 Para cada socio se deberá conocer un dni, el número de móvil y el email. 
