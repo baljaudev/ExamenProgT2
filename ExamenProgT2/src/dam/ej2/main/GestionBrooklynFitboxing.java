@@ -83,6 +83,7 @@ public class GestionBrooklynFitboxing {
         if (conjuntoSocios.isEmpty()) {
             System.out.println("No hay socios que mostrar");
         } else {
+            System.out.println("***Lista de socios registrados***");
             for (Socio socio : conjuntoSocios) {
                 System.out.println(socio);
             }
@@ -105,16 +106,14 @@ public class GestionBrooklynFitboxing {
 
             if (tipoSocio.equalsIgnoreCase("B")) {
                 int numSes = validarSesiones();
-                SocioBono socBo = new SocioBono(dni, numTel, email, numSes);
-                conjuntoSocios.add(socBo);
-                System.out.println("\n¡Socio registrado!");
+                socio = new SocioBono(dni, numTel, email, numSes);
             } else {
                 String tipoBonoMens = validarTipoBonoMens();
                 String numCuenta = validarTexto("Introduce el número de cuenta del socio:");
-                SocioMensual socMens = new SocioMensual(dni,numTel,email,tipoBonoMens,numCuenta);
-                conjuntoSocios.add(socMens);
-                System.out.println("\n¡Socio registrado!");
+                socio = new SocioMensual(dni,numTel,email,tipoBonoMens,numCuenta);
             }
+            conjuntoSocios.add(socio);
+            System.out.println("\n¡Socio registrado!");
         }
     }
 
