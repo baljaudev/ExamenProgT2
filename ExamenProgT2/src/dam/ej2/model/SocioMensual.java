@@ -13,9 +13,7 @@ public class SocioMensual extends Socio {
     @Override
     public String toString() {
         return "\nSocio de Mensualidad:"
-                +"\n DNI: "+dni
-                +"\n Teléfono: "+telefono
-                +"\n Email: "+email
+                + super.toString()
                 +"\n Plan : "+plan
                 +"\n Número de cuenta: "+numCuenta;
     }

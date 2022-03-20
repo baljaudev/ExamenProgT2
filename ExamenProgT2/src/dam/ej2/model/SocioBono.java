@@ -11,9 +11,7 @@ public class SocioBono extends Socio {
     @Override
     public String toString() {
         return "\nSocio de Bono:"
-                +"\n DNI: "+dni
-                +"\n Teléfono: "+telefono
-                +"\n Email: "+email
+                + super.toString()
                 +"\n Sesiones en bono: "+numSesiones;
     }
 

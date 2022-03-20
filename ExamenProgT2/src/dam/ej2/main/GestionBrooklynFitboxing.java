@@ -41,7 +41,7 @@ public class GestionBrooklynFitboxing {
 
     private static void cambiarPlanSocio() {
         String dni = validarDni();
-        String tipoBonoMens = "";
+        String tipoBonoMens;
 
         for (int i = 0; i < conjuntoSocios.size(); i++) {
             if (conjuntoSocios.get(i) instanceof SocioMensual) {
@@ -50,7 +50,11 @@ public class GestionBrooklynFitboxing {
                     ((SocioMensual)conjuntoSocios.get(i)).setPlan(tipoBonoMens);
                     System.out.println("Bono cambiado a tipo: "+tipoBonoMens);
                     i = conjuntoSocios.size();
+                } else {
+                    System.out.println("El DNI no se encuentra en la lista");
                 }
+            } else {
+                System.out.println("El socio no es de tipo mensual");
             }
         }
     }
@@ -66,7 +70,11 @@ public class GestionBrooklynFitboxing {
                     ((SocioBono)conjuntoSocios.get(i)).recargarBono(numSes);
                     System.out.println("Bono recargado con "+numSes+" sesiones");
                     i = conjuntoSocios.size();
+                } else {
+                    System.out.println("El DNI no se encuentra en la lista");
                 }
+            } else {
+                System.out.println("El socio no es de tipo bono");
             }
         }
     }
@@ -151,6 +159,8 @@ public class GestionBrooklynFitboxing {
             } else if (bonoMens.equalsIgnoreCase("2SS") || bonoMens.equalsIgnoreCase("3SS") 
                     || bonoMens.equalsIgnoreCase("SI")){
                 continuar = false;
+            }  else {
+                System.out.println("La entrada introducida, no es ni B ni M");
             }
         }
         return bonoMens;
@@ -169,6 +179,8 @@ public class GestionBrooklynFitboxing {
                 System.out.println("Debe introducir un valor; no puede estar vacío");
             } else if (tipo.equalsIgnoreCase("B") || tipo.equalsIgnoreCase("M")){
                 continuar = false;
+            } else {
+                System.out.println("La entrada introducida, no es ni B ni M");
             }
         }
         return tipo;

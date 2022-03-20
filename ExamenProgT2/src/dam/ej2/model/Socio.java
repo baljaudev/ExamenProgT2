@@ -14,11 +14,9 @@ public class Socio {
 
     @Override
     public String toString() {
-        return "Socio{" +
-                "dni='" + dni + '\'' +
-                ", telefono='" + telefono + '\'' +
-                ", email='" + email + '\'' +
-                '}';
+        return "\n DNI: "+dni
+                +"\n Teléfono: "+telefono
+                +"\n Email: "+email;
     }
 
     public String getDni() {
