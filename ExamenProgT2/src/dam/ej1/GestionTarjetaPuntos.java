@@ -24,10 +24,10 @@ public class GestionTarjetaPuntos {
             litros = Integer.parseInt(sc.nextLine());
 
             if (!tablaPuntos.containsKey(matricula)) {
-                tablaPuntos.put(matricula,litros/10);
+                tablaPuntos.put(matricula.toUpperCase(),litros/10);
                 System.out.println("NUEVA TARJETA, ACUMULADOS EN ESTE REPOSTAJE: "+tablaPuntos.get(matricula)+" PUNTOS");
             } else {
-                tablaPuntos.put(matricula,(litros/10)+tablaPuntos.get(matricula));
+                tablaPuntos.put(matricula.toUpperCase(),(litros/10)+tablaPuntos.get(matricula));
                 System.out.println("ACUMULACIÓN DE PUNTOS, ACUMULADOS EN ESTE REPOSTAJE: "+(litros/10)+" PUNTOS");
             }
             System.out.println("¿Deseas continuar?");
@@ -57,7 +57,7 @@ public class GestionTarjetaPuntos {
                 }
                 System.out.println(matriculas + " - " + tablaPuntosOrd.get(matriculas)+" PUNTOS");
             }
-            System.out.println("Cantidad de tarjetas con 10 o m�s puntos: "+contTarjMasDiezPts);
+            System.out.println("Cantidad de tarjetas con 10 o más puntos: "+contTarjMasDiezPts);
         }
     }
 }
