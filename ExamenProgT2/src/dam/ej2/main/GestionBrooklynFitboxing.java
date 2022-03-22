@@ -24,7 +24,7 @@ public class GestionBrooklynFitboxing {
             opcionMenu = solicitarOpcion();
 
             if (opcionMenu==1) {
-                addSocio();
+                nuevoSocio();
             } else if (opcionMenu==2) {
                 mostrarSocios();
             } else if (opcionMenu==3) {
@@ -89,35 +89,44 @@ public class GestionBrooklynFitboxing {
         }
     }
 
-    private static void addSocio() {
+    private static void nuevoSocio() {
         String dni = validarDni();
-        for (int j = 0; j < conjuntoSocios.size(); j++) {
-            if (dni.equalsIgnoreCase(((SocioBono)conjuntoSocios.get(j)).getDni())
-                    || dni.equalsIgnoreCase(((SocioMensual)conjuntoSocios.get(j)).getDni())) {
-                System.out.println("El DNI del socio ya se encuentra en la lista");
-                dni = validarDni();
-                j = conjuntoSocios.size();
+
+        Socio socio = comprobarDni(dni);
+
+        if (socio != null) {
+            System.out.println("EL DNI corresponde a un socio que ya está dado de alta.");
+        } else {
+            String numTel = validarNumTel();
+
+            String email = validarTexto("Introduce el email del socio:");
+
+            String tipoSocio = validarTipoSocio();
+
+            if (tipoSocio.equalsIgnoreCase("B")) {
+                int numSes = validarSesiones();
+                SocioBono socBo = new SocioBono(dni, numTel, email, numSes);
+                conjuntoSocios.add(socBo);
+                System.out.println("\n¡Socio registrado!");
+            } else {
+                String tipoBonoMens = validarTipoBonoMens();
+                String numCuenta = validarTexto("Introduce el número de cuenta del socio:");
+                SocioMensual socMens = new SocioMensual(dni,numTel,email,tipoBonoMens,numCuenta);
+                conjuntoSocios.add(socMens);
+                System.out.println("\n¡Socio registrado!");
             }
         }
+    }
 
-        String numTel = validarNumTel();
-
-        String email = validarTexto("Introduce el email del socio:");
-
-        String tipoSocio = validarTipoSocio();
-
-        if (tipoSocio.equalsIgnoreCase("B")) {
-            int numSes = validarSesiones();
-            SocioBono socBo = new SocioBono(dni, numTel, email, numSes);
-            conjuntoSocios.add(socBo);
-            System.out.println("\n¡Socio registrado!");
-        } else {
-            String tipoBonoMens = validarTipoBonoMens();
-            String numCuenta = validarTexto("Introduce el número de cuenta del socio:");
-            SocioMensual socMens = new SocioMensual(dni,numTel,email,tipoBonoMens,numCuenta);
-            conjuntoSocios.add(socMens);
-            System.out.println("\n¡Socio registrado!");
+    private static Socio comprobarDni(String dni) {
+        Socio socio = null;
+        for (int i = 0; i < conjuntoSocios.size(); i++) {
+            if (conjuntoSocios.get(i).getDni().equalsIgnoreCase(dni)) {
+                socio = conjuntoSocios.get(i);
+                i = conjuntoSocios.size();
+            }
         }
+        return socio;
     }
 
     private static int validarSesiones() {

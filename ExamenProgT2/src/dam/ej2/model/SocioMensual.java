@@ -14,7 +14,7 @@ public class SocioMensual extends Socio {
     public String toString() {
         return "\nSocio de Mensualidad:"
                 + super.toString()
-                +"\n Plan : "+plan
+                +"\n Plan: "+plan
                 +"\n Número de cuenta: "+numCuenta;
     }
 
